@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Spremista</h1>
+    
+</div>
+
+<div class="container">
+    <hr />
+    @foreach (var storageUnit in Model)
+    {
+        <h3>@storageUnit.Name</h3>
+        <p>Kapacitet: @storageUnit.Capacity</p>
+        <ul>
+            @foreach (var item in storageUnit.Items)
+            {
+                <li>@item.Name - Kolicina: @item.Quantity</li>
+            }
+        </ul>
+        <hr />
+    }
+</div>
